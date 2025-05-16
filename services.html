@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenery - Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .service {
+      text-align: center;
+      background-color: #F2EAD3;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal-content {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: center;
+    }
+    .modal-close {
+      cursor: pointer;
+      color: #8B7E74;
+      font-weight: bold;
+      float: right;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="Home.html" class="logo">Greenery</a>
+      <nav>
+        <a href="Home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="care.html">Plant Care</a>
+        <a href="contacts.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 style="text-align:center; margin-top: 2rem;">Our Services</h1>
+    <section class="services">
+      <div class="service" onclick="openModal('Delivery', 'We deliver healthy, hand-picked plants right to your doorstep, carefully packaged and ready to thrive.')">
+        <h2>Delivery</h2>
+      </div>
+      <div class="service" onclick="openModal('Repotting', 'We safely transfer your plant to a more suitable pot and soil to encourage healthy growth.')">
+        <h2>Repotting</h2>
+      </div>
+      <div class="service" onclick="openModal('Plant Rescue', 'We diagnose issues with sick plants and offer solutions to revive and restore them.')">
+        <h2>Plant Rescue</h2>
+      </div>
+      <div class="service" onclick="openModal('Plant Care Consultation', 'Need help understanding your plant’s needs? Book a session with our experts.')">
+        <h2>Plant Care Consultation</h2>
+      </div>
+      <div class="service" onclick="openModal('Garden Setup', 'From balcony gardens to backyard jungles — we’ll help design and set up your perfect green space.')">
+        <h2>Garden Setup</h2>
+      </div>
+      <div class="service" onclick="openModal('Maintenance Plans', 'Subscribe for monthly plant maintenance including watering, pruning, and checkups.')">
+        <h2>Maintenance Plans</h2>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="serviceModal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Greenery. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openModal(name, description) {
+      document.getElementById('modalTitle').innerText = name;
+      document.getElementById('modalDescription').innerText = description;
+      document.getElementById('serviceModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('serviceModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('serviceModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
