@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenery - Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .product {
+      text-align: center;
+      cursor: pointer;
+    }
+    .product img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .product:hover img {
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal-content {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: center;
+    }
+    .modal-close {
+      cursor: pointer;
+      color: #8B7E74;
+      font-weight: bold;
+      float: right;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="Home.html" class="logo">Greenery</a>
+      <nav>
+        <a href="Home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="care.html">Plant Care</a>
+        <a href="contacts.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 style="text-align:center; margin-top: 2rem;">Our Plants</h1>
+    <section class="products">
+      
+      <div class="product" onclick="openModal('african violet', 'A charming, compact plant with soft, velvety leaves and delicate purple, pink, or white flowers. Loved for its ability to bloom indoors year-round, it thrives in bright, indirect light and prefers consistent moisture, making it ideal for tabletops and windowsills..')">
+        <img src="african violet.jpg" alt="Spider Plant">
+        <p>African Violet</p>
+      </div>
+      <div class="product" onclick="openModal('aglaonema beauty', 'An eye-catching indoor plant known for its lush green leaves splashed with pink, red, or cream accents. Low-maintenance and air-purifying, it thrives in low to moderate light, making it a great choice for both homes and offices..')">
+        <img src="aglaonema.beauty.jpg" alt="aglaonema.beauty">
+        <p>aglaonema.beauty</p>
+      </div>
+      <div class="product" onclick="openModal('begonia-maculata', 'Often called the Polka Dot Begonia, this stunning plant features dark green leaves adorned with white spots and a deep red underside. It prefers bright, indirect light and adds bold, tropical flair to any indoor space..')">
+        <img src="begonia-maculata.jpg" alt="begonia-maculata">
+        <p>begonia-maculata</p>
+      </div>
+      <div class="product" onclick="openModal('aglaonema.siam', 'Also known as Siam Aurora, this vibrant plant boasts striking red, pink, and green foliage. It’s a hardy and adaptable choice, tolerating low light and dry air, while bringing vibrant color to shaded corners..')">
+        <img src="aglaonema.siam.jpg" alt="aglaonema.siam">
+        <p>aglaonema.siam</p>
+        </div>
+      <div class="product" onclick="openModal('anthuriums', 'Tropical beauties with waxy, heart-shaped flowers in shades of red, pink, or white, paired with dark, glossy leaves. They thrive in warm, humid environments with bright, indirect light and bloom almost all year with proper care..')">
+        <img src="anthuriums.webp" alt="anthuriums">
+        <p>anthuriums</p>
+       </div>
+       <div class="product" onclick="openModal('burle-marx-philodendron', 'Thriving in medium to bright indirect light, this philodendron prefers soil that stays lightly moist, and it appreciates occasional trimming to keep its shape full and healthy.')">
+        <img src="burle-marx-philodendron.jpg" alt="burle-marx-philodendron">
+        <p>burle-marx-philodendron</p>
+      </div>
+      <div class="product" onclick="openModal('Calathea Makoyana', 'Commonly known as the Peacock Plant, its light green leaves are intricately patterned with dark green and purple, resembling peacock feathers.')">
+        <img src="Calathea Makoyana.jpg" alt="Calathea Makoyana">
+        <p>Calathea Makoyana</p>
+      </div>
+      <div class="product" onclick="openModal('birds-nest-fern', 'A lush, tropical fern with wide, crinkled fronds that grow from a central rosette, creating a nest-like shape.')">
+        <img src="birds-nest-fern.jpg" alt="birds-nest-fern">
+        <p>birds-nest-fern</p>
+      </div> 
+      <div class="product" onclick="openModal('Fiddle Leaf Fig', 'Known as the Weeping Fig, this graceful tree has slender branches and glossy, oval leaves. It’s a classic indoor plant that likes bright, filtered light and consistent conditions, making it sensitive to sudden changes..')">
+        <img src="ficus_benjamina.jpg" alt="Fiddle Leaf Fig">
+        <p>Fiddle Leaf Fig</p>
+      </div>
+      <div class="product" onclick="openModal('fiddle-leaf-fig', 'A trendy favorite, this tall plant features large, leathery leaves shaped like fiddles or violins. It makes a bold statement in living spaces, preferring bright, indirect light and minimal movement once placed.')">
+        <img src="fiddle-leaf-fig.jpg" alt="Burle Marx Philodendron">
+        <p>Burle Marx Philodendron</p>
+       </div>
+      <div class="product" onclick="openModal('croton-mammy', 'Colorful plant with twisted, glossy leaves in red, yellow, green, and orange. Loves sunlight and warmth for vibrant colors.')">
+        <img src="croton-mammy.jpg" alt="croton-mammy">
+        <p>croton-mammy</p>
+      </div>
+        <div class="product" onclick="openModal('crown-of-thorns', 'A spiky succulent that blooms with small red or pink flowers. Tolerates dry conditions and full sun..')">
+        <img src="crown-of-thorns.jpg" alt="crown-of-thorns">
+        <p>crown-of-thorns</p>
+       </div> 
+       <div class="product" onclick="openModal('tradescantia nanouk', 'A spiky succulent that blooms with small red or pink flowers. Tolerates dry conditions and full sun..')">
+        <img src="tradescantia-nanouk.jpg" alt="tradescantia nanouk">
+        <p>crown-of-thorns</p>
+       </div>
+    </section>
+  </main>
+
+  
+  <div class="modal" id="plantModal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Greenery. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openModal(name, description) {
+      document.getElementById('modalTitle').innerText = name;
+      document.getElementById('modalDescription').innerText = description;
+      document.getElementById('plantModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('plantModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('plantModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
