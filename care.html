@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenery - Plant Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .care-item {
+      text-align: center;
+      cursor: pointer;
+    }
+    .care-item img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .care-item:hover img {
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal-content {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      text-align: left;
+    }
+    .modal-close {
+      cursor: pointer;
+      color: #8B7E74;
+      font-weight: bold;
+      float: right;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="Home.html" class="logo">Greenery</a>
+      <nav>
+        <a href="Home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="contacts.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 style="text-align:center; margin-top: 2rem;">Plant Care Guide</h1>
+    <section class="care-grid">
+      <div class="care-item" onclick="openModal('african violet', 'African violets thrive in bright, indirect sunlight, prefer slightly moist soil, and should be kept in warm, humid environments, while avoiding water on their leaves to prevent spotting.')">
+        <img src="african violet.jpg" alt="African Violet">
+        <p>african voilet</p>
+      </div>
+      <div class="care-item" onclick="openModal('alaonema.beauty', 'This plant grows well in low to medium light, enjoys moderate watering when the topsoil is dry, and benefits from an occasional leaf wipe to maintain its glossy appearance.')">
+        <img src="aglaonema.beauty.jpg" alt="Aglaonema Beauty">
+        <p>alaonema.beauty</p>
+      </div>
+      <div class="care-item" onclick="openModal('begonia.maculata', 'Known for its striking spotted leaves, this plant does best in bright, filtered light, prefers its soil to dry slightly between watering, and should be kept dry on the leaves to avoid mildew.')">
+        <img src="begonia-maculata.jpg" alt="begonia maculata">
+        <p>begonia maculata</p>
+      </div>
+         <div class="care-item" onclick="openModal('aglaonema.siam', 'Aglaonema Siam adapts well to low to medium light, likes to be watered when the soil begins to dry, and can tolerate some neglect, making it ideal for beginners.')">
+        <img src="aglaonema.siam.jpg" alt="aglaoonema.siam">
+        <p>aglaonema siam</p>
+    </div>
+         <div class="care-item" onclick="openModal('anthuriums', 'These flowering houseplants enjoy bright, indirect light, prefer lightly moist soil that drains well, and love high humidity, which encourages their long-lasting blooms.')">
+        <img src="anthuriums.webp" alt="Anthuriums">
+        <p>anthuriums</p> 
+     </div>
+        <div class="care-item" onclick="openModal('burle-marx-philodendron', 'Thriving in medium to bright indirect light, this philodendron prefers soil that stays lightly moist, and it appreciates occasional trimming to keep its shape full and healthy.')">
+        <img src="burle-marx-philodendron.jpg" alt="burle-marx-philodendron">
+        <p></p>burle-marx-philodendron</div> 
+     </div> 
+        <div class="care-item" onclick="openModal('calathea makoyana', 'This peacock-patterned plant prefers low to medium light, moist but not soggy soil, and clean, filtered water with high humidity to keep its vibrant foliage from curling.')">
+        <img src="Calathea Makoyana.jpg" alt="Calathea Makoyana">
+        <p>calathea makoyana</p>
+     </div>
+        <div class="care-item" onclick="openModal('birds-nest-fern', 'It grows best in indirect light, requires the soil to be kept evenly moist, and needs watering at the soil level rather than the center to avoid crown rot, with humidity being a key to its lush appearance.')">
+        <img src="birds-nest-fern.jpg" alt="birds-nest-fern">
+        <p>birds-nest-fern</p>
+     </div>
+        <div class="care-item" onclick="openModal('ficus_benjamina', 'This tree-like plant thrives in bright, indirect sunlight, should be watered only when the top inch of soil is dry, and dislikes being moved frequently, as it may drop leaves from stress.')">
+            <img src="ficus_benjamina.jpg" alt="ficus_benjamina">
+            <p>ficus_benjamina</p>
+     </div> 
+        <div class="care-item" onclick="openModal('fiddle-leaf', 'Fiddle leaf figs love bright, filtered light, should be watered thoroughly but only when the topsoil feels dry, and benefit from consistent conditions and occasional leaf cleaning.')">
+            <img src="fiddle-leaf-fig.jpg" alt="fiddle-leaf">
+           <p>fiddle-leaf</p>
+      </div>  
+        <div class="care-item" onclick="openModal('crown of thorns', 'This sun-loving succulent prefers full sunlight, needs its soil to dry completely between watering, and should be handled with care due to its thorny stems and potentially irritating sap.')">
+            <img src="crown-of-thorns.jpg" alt="fiddle-leaf">
+            <p>fiddle-leaf</p>
+        </div> 
+        <div class="care-item" onclick="openModal('croton mommy', 'Croton Mammy thrives in bright, direct sunlight to keep its colorful leaves vibrant, likes consistently moist but not waterlogged soil, and enjoys misting for added humidity.')">
+            <img src="croton-mammy.jpg" alt="fiddle-leaf">
+            <p>crown mammy</p>
+        </div> 
+            <div class="care-item" onclick="openModal('tradescantia-nanouk', 'With its soft pink and green foliage, this plant flourishes in bright, indirect light, prefers the top inch of soil to dry out between watering, and grows bushier when its tips are pinched regularly.')">
+            <img src="tradescantia-nanouk.jpg" alt="tradescantia-nanouk">
+            <p>crown mammy</p>
+        </div> 
+    </section> 
+  </main>
+
+  
+  <div class="modal" id="careModal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <pre id="modalDescription" style="white-space: pre-wrap;"></pre>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Greenery. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openModal(name, careInstructions) {
+      document.getElementById('modalTitle').innerText = name;
+      document.getElementById('modalDescription').innerText = careInstructions;
+      document.getElementById('careModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('careModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('careModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
