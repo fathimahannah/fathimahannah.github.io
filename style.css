@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Open+Sans&display=swap');
+:root {
+  --bg-main: #FAFAFA;
+  --text-main: #8B7E74;
+  --primary: #A8B9A2;
+  --secondary: #C9D8B6;
+  --hero-bg: #F2EAD3;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Open Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: var(--primary);
+  color: var(--bg-main);
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+header h1,
+.featured h2,
+.hero h1 {
+  font-family: var(--font-serif);
+  margin: 0;
+}
+
+nav {
+  background-color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background-color: var(--hero-bg);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.featured img {
+  max-width: 300px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+
+footer {
+  margin-top: 2rem;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--bg-main);
+  font-weight: bold;
+}
+
+.logo:hover {
+  text-decoration: underline;
+}
+
+.about {
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #F2EAD3;
+}
+
+.features img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.features img:hover {
+  transform: scale(1.05);
+}
